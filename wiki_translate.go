@@ -24,7 +24,6 @@ if err != nil {
 responseString := string(responseData)
 // поиск позиции первого вхождения тега
 a = strings.Index(responseString, "interlanguage-link interwiki")
-//fmt.Println(a)
 // перебор в цикле других вхождений
 for (a<len(responseString)) {
 	responseString2 = responseString[a:len(responseString)]
@@ -33,11 +32,9 @@ for (a<len(responseString)) {
 	responseString2 = strings.Replace(responseString2, "interlanguage-link interwiki", "", 1)
 	//fmt.Println(responseString2[0:100])
 	if strings.Index(responseString2[10:len(responseString2)], "interlanguage-link interwiki") == -1	{
-		//fmt.Println("Last")
 		// если не найдено, выходим
 		return
 	}
 	a = a+strings.Index(responseString2[10:len(responseString2)], "interlanguage-link interwiki")
-	//fmt.Println(a)
 	}
 }
