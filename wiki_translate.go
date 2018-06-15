@@ -16,7 +16,7 @@ func main() {
 	// Запрос данных с сайта
 	response, err := http.Get("https://ru.wikipedia.org/wiki/"+os.Args[1])
 	// Запись в переменную
-    responseData,err := ioutil.ReadAll(response.Body)
+    	responseData,err := ioutil.ReadAll(response.Body)
 if err != nil {
     log.Fatal(err)
 }
